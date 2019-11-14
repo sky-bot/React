@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Hello World..!!!</h1>
-          <Person></Person>
+          <Person name='Innocent Boy' age='23'> I am Full StackDeveloper</Person>
         </header>
       </div>
   );
