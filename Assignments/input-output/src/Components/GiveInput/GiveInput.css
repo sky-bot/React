@@ -1,5 +1,19 @@
 
 .GiveInput {
-    display: flex;
     border: solid black;
+    margin: 2em;
+    width: 30%;
+    display: flex;
+    text-align: center;
+    box-shadow: 3px 3px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-grow: 1; 
+}
+
+.inputBox {
+    flex-grow: 1; 
+    
 }

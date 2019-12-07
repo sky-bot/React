@@ -3,10 +3,14 @@ import './GiveInput.css'
 
 const giveinput = (props) => {
     return (
-        <div>
-            <input type="text" 
+        <div className="GiveInput">
+            <div className="inputContainer">
+            <input type="text"
+            className="inputBox" 
             onChange={props.changed} 
             placeholder="Enter your Input"/>
+            </div>
+           
         </div>
     )
 }
