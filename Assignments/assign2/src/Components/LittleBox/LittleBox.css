@@ -1,0 +1,12 @@
+.smallBox {
+    font-size: 1em;
+}
+
+.boxContainer {
+    width: 3em;
+    background-color: aqua;
+    display: flex;
+    border: solid black;
+    display: inline-block;
+    margin:0.5em;
+}
