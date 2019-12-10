@@ -1,5 +1,5 @@
 import React from 'react';
-import './GiveInput.css'
+import './GiveInput.css';
 
 const giveinput = (props) => {
     return (
