@@ -6,6 +6,7 @@ const giveinputs = (props) => {
         <div>
             <input type = "text"
             onChange={props.changed}
+            value={props.val}
             placeholder="Enter your Inputs"/>
         </div>
     )
