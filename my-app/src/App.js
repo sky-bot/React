@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Radium, { StyleRoot } from 'radium'
+
 import './App.css';
-import './Person/Person.css'
+// import './Person/Person.css'
 
 import Person from './Person/Person';
 
@@ -61,10 +61,7 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer',
       margin: '10px',
-      ':hover': {
-        backgroundColor: 'yellow',
-        color: 'black'
-      }
+      
     };
 
     let persons = null;
@@ -85,10 +82,7 @@ class App extends Component {
 
       );
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      };
+      
     }
 
     let classes = ['red', 'bold'].join(" ");
@@ -100,18 +94,18 @@ class App extends Component {
 
 
     return (
-      <StyleRoot>
+    
         <div className="App">
           <h1>Hi, I'm a React App</h1>
           <p className={classes}> This is really working!</p>
           <button style={style} onClick={this.toggleNameHandler}>Toggle Name</button>
           {persons}
         </div>
-      </StyleRoot>
+      
 
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default Radium(App);
+export default App;
