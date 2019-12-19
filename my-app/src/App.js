@@ -6,14 +6,13 @@ import './App.css';
 import Person from './Person/Person';
 
 const StyledButton = styled.button`
-  backgroundColor: ${props => props.alt ? 'red' : 'green'},
-  color: white,
-  font: inherit,
-  border: 1px solid blue,
-  padding: 8px,
-  cursor: pointer,
-  margin: 10px,
+  background-color: ${props => props.alt ? 'red':'green'};
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
   cursor: pointer;
+  margin: 10px;
 
   &:hover {
     background-color: lightgreen;
@@ -69,17 +68,6 @@ class App extends Component {
 
 
   render() {
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      margin: '10px',
-
-    };
-
     let persons = null;
 
     if (this.state.showPersons) {
@@ -97,7 +85,6 @@ class App extends Component {
         </div>
 
       );
-      style.backgroundColor = 'red';
 
     }
 
