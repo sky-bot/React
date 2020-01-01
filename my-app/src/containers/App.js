@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 // import './Person/Person.css'
 
-import Person from './Person/Person';
+import Person from '../components/Persons/Person/Person';
 
 const StyledButton = styled.button`
   background-color: ${props => props.alt ? 'red':'green'};
