@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 // import './Person/Person.css'
 
-import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
 
 const StyledButton = styled.button`
   background-color: ${props => props.alt ? 'red':'green'};
@@ -74,7 +74,13 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this.state.persons.map((person, index) => {
+          <Persons 
+            persons={this.state.persons}
+            clicked={this.deletePersonHandler}
+            changed={this.nameChangeHandler}
+          />
+
+          {/* {this.state.persons.map((person, index) => {
             return<Person
               click={this.deletePersonHandler.bind(this.index)}
               name={person.name}
@@ -82,7 +88,7 @@ class App extends Component {
               key={person.id}
               changed={(event) => this.nameChangeHandler(event, person.id)}
             />
-          })}
+          })} */}
         </div>
 
       );
@@ -100,10 +106,6 @@ class App extends Component {
     return (
 
       <div className="App">
-        <h1>Hi, I'm a React App</h1>
-        <p className={classes}> This is really working!</p>
-        <StyledButton alt={this.state.showPersons}
-          onClick={this.toggleNameHandler}>Toggle Name</StyledButton>
         {persons}
       </div>
 
