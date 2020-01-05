@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import classes from './Cockpit.css'
 
 const StyledButton = styled.button`
   background-color: ${props => props.alt ? 'red':'green'};
@@ -17,12 +18,19 @@ const StyledButton = styled.button`
 `;
 
 const cockpit = (props) => {
+
+    let classes = ['red', 'bold'].join(" ");
+ 
+    if (props.persons.length % 2 === 1) {
+      classes = ["blue", "bold"].join(" ");
+    }
+
     return (
-    <div>
-         <h1>Hi, I'm a React App</h1>
+    <div className={classes.Cockpit}>
+        <h1>Hi, I'm a React App</h1>
         <p className={classes}> This is really working!</p>
-        <StyledButton alt={this.state.showPersons}
-        onClick={this.toggleNameHandler}>Toggle Name</StyledButton>);
+        <StyledButton alt={props.showPersons}
+        onClick={props.clicked}>Toggle Name</StyledButton>);
     </div>
     );
 };

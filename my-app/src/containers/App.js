@@ -1,25 +1,8 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-// import classes from './App.css';
-// import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
-// import './Person/Person.css'
-
+import Cockpit from '../components/Cockpit/Cockpit';
 import Persons from '../components/Persons/Persons';
 
-const StyledButton = styled.button`
-  background-color: ${props => props.alt ? 'red':'green'};
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 8px;
-  cursor: pointer;
-  margin: 10px;
 
-  &:hover {
-    background-color: lightgreen;
-    color: black;
-  }
-`;
 
 class App extends Component {
   state = {
@@ -72,46 +55,27 @@ class App extends Component {
     let persons = null;
 
     if (this.state.showPersons) {
-      persons = (
-        <div>
-          <Persons 
+      console.log("inside")
+      persons = <Persons 
             persons={this.state.persons}
             clicked={this.deletePersonHandler}
             changed={this.nameChangeHandler}
           />
-
-          {/* {this.state.persons.map((person, index) => {
-            return<Person
-              click={this.deletePersonHandler.bind(this.index)}
-              name={person.name}
-              age={person.age}
-              key={person.id}
-              changed={(event) => this.nameChangeHandler(event, person.id)}
-            />
-          })} */}
-        </div>
-
-      );
-
     }
-
-    let classes = ['red', 'bold'].join(" ");
-
-    if (this.state.persons.length % 2 === 1) {
-      classes = ["blue", "bold"].join(" ");
-    }
-
-
 
     return (
-
       <div className="App">
+        <Cockpit 
+          showPersons = {this.state.showPersons}
+          persons = {this.state.persons}
+          clicked={this.toggleNameHandler}
+        />
         {persons}
       </div>
 
 
     );
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
+
   }
 }
 
