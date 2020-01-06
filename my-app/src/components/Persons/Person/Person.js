@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const StyledDiv = styled.div`
@@ -15,17 +15,19 @@ text-align: center;
 `;
 
 
-const person = (props) => {
-    console.log('[Person.js] rendering')
-    return (
+class Person extends Component {
+    render() {
+        console.log('[Person.js] rendering')
+        return (
         // <div className="Person" style={style}> 
         <StyledDiv>
-            <p onClick={props.click}>I am {props.name}. I am {props.age} year old</p>.
-            <p>{props.children}</p>
-            <input type="text" onChange={props.changed} value={props.name} />
+            <p onClick={this.props.click}>I am {this.props.name}. I am {this.props.age} year old</p>.
+            <p>{this.props.children}</p>
+            <input type="text" onChange={this.props.changed} value={this.props.name} />
 
         </StyledDiv>
-    );
+      );
+    }
 };
 
-export default person;
+export default Person;
