@@ -3,15 +3,39 @@ import Cockpit from '../components/Cockpit/Cockpit';
 import Persons from '../components/Persons/Persons';
 
 class App extends Component {
-  state = {
-    persons: [
-      { id: 'asds', name: 'Max', age: 28 },
-      { id: 'adfg', name: 'Manu', age: 29 },
-      { id: 'fege', name: 'Stephanie', age: 26 }
-    ],
-    otherState: 'some other value',
-    showPersons: false
-  };
+
+  constructor(props) {
+    super(props);
+    console.log('[App.js] inside constructor');
+    this.state = {
+      persons: [
+        { id: 'asds', name: 'Max', age: 28 },
+        { id: 'adfg', name: 'Manu', age: 29 },
+        { id: 'fege', name: 'Stephanie', age: 26 }
+      ],
+      otherState: 'some other value',
+      showPersons: false
+    };
+  }
+
+  // state = {
+  //   persons: [
+  //     { id: 'asds', name: 'Max', age: 28 },
+  //     { id: 'adfg', name: 'Manu', age: 29 },
+  //     { id: 'fege', name: 'Stephanie', age: 26 }
+  //   ],
+  //   otherState: 'some other value',
+  //   showPersons: false
+  // };
+
+  static getDerivedStateFromProps(props, state){
+    console.log('[App.js] inside getDerivedStateFromProps')
+    return state;
+  }
+
+  componentDidMount() {
+    console.log('[App.js] component Did Mount');
+  }
 
 
   deletePersonHandler = (personIndex) => {
@@ -50,6 +74,7 @@ class App extends Component {
 
 
   render() {
+    console.log('[App.js] inside render')
     let persons = null;
 
     if (this.state.showPersons) {

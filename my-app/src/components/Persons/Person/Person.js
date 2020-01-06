@@ -16,8 +16,9 @@ text-align: center;
 
 
 const person = (props) => {
+    console.log('[Person.js] rendering')
     return (
-        // <div className="Person" style={style}>
+        // <div className="Person" style={style}> 
         <StyledDiv>
             <p onClick={props.click}>I am {props.name}. I am {props.age} year old</p>.
             <p>{props.children}</p>
