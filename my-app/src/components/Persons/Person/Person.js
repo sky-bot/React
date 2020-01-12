@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-
+import Aux from '../../../hoc/Aux';
 const StyledDiv = styled.div`
 width: 450px;
 margin: auto;
@@ -19,14 +19,15 @@ class Person extends Component {
     render() {
         console.log('[Person.js] rendering')
         return (
-        // <div className="Person" style={style}> 
+        <Aux> 
         <StyledDiv>
-            <p onClick={this.props.click}>I am {this.props.name}. I am {this.props.age} year old</p>.
-            <p>{this.props.children}</p>
-            <input type="text" onChange={this.props.changed} value={this.props.name} />
+            <p key='p1' onClick={this.props.click}>I am {this.props.name}. I am {this.props.age} year old.</p>
+            <p key='p2'>{this.props.children}</p>
+            <input key='i3' type="text" onChange={this.props.changed} value={this.props.name} />
 
         </StyledDiv>
-      );
+        </Aux>
+    );
     }
 };
 
