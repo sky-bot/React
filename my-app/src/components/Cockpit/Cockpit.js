@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 
@@ -18,10 +18,13 @@ const StyledButton = styled.button`
 `;
 
 const cockpit = (props) => {
+    useEffect(()=> {
+      console.log('[Cockpip.js] useEffect');
+    });
 
     let classes = ['red', 'bold'].join(" ");
  
-    if (props.persons.length % 2 === 1) {
+    if (props.personsLength % 2 === 1) {
       classes = ["blue", "bold"].join(" ");
     }
 
