@@ -18,6 +18,8 @@ const StyledButton = styled.button`
 `;
 
 const cockpit = (props) => {
+    
+
     useEffect(()=> {
       console.log('[Cockpip.js] useEffect');
     });
@@ -32,7 +34,7 @@ const cockpit = (props) => {
     <div className={classes.Cockpit}>
         <h1>Hi, I'm a React App</h1>
         <p className={classes}> This is really working!</p>
-        <StyledButton alt={props.showPersons}
+        <StyledButton  alt={props.showPersons}
         onClick={props.clicked}>Toggle Name</StyledButton>);
     </div>
     );
